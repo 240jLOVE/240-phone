@@ -1096,7 +1096,7 @@ $('pc').addEventListener('click',function(e){var m=e.target.closest('[data-m]');
  var LOVE=[['차의재','이사영 뭐 잘못했냐?'],['이사영','잘못하긴요.\n연인 사이에 사랑한다고 말도 못하나.'],['차의재','...\n그건 맞는데.\n아무튼 나중에 연락 할게.'],['이사영','...'],['차의재','나도 사랑해.']];
  function push(c,txt,when){c.m.push({me:0,t:txt,tm:when});c.tm=when;if(kc===c&&kIsOpen())kRoom();else{c.un=(c.un||0)+1}kRender()}
  var _ks=kSend;kSend=function(x){var tt=(x||'').trim(),c=kc;
-  if(c&&c.n==='차의재'&&/보고\s*싶어요/.test(tt)){var r=c.rp;c.rp=null;_ks(x);var d=new Date();setTimeout(function(){push(c,'갑자기?',tmf(d))},1800);setTimeout(function(){push(c,'나도 보고 싶네',tmf(new Date(d.getTime()+3e5)));c.rp=r},3300);return}
+  if(c&&c.n==='차의재'&&/보고\s*싶/.test(tt)){var r=c.rp;c.rp=null;_ks(x);var d=new Date();setTimeout(function(){push(c,'갑자기?',tmf(d))},1800);setTimeout(function(){push(c,'나도 보고 싶네',tmf(new Date(d.getTime()+3e5)));c.rp=r},3300);return}
   if(c&&c.n==='차의재'&&/사랑해/.test(tt)){var r2=c.rp;c.rp=null;_ks(x);setTimeout(function(){c.rp=r2;window.NEXTCALL=LOVE;ringOn()},2500);return}
   _ks(x)};
  var _ra=ringAns;ringAns=function(i){if(i==='0')window.NEXTCALL=null;_ra(i)};
